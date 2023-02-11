@@ -1,9 +1,14 @@
-import classes from './index.module.css'
+import classes from "./index.module.css";
+import Feed from "../Feed";
 
 function App() {
-    return <>
-        <h4>Hi Im App Component</h4>
+  return (
+    <>
+      <div className={classes.appContainer}>
+        <Feed />
+      </div>
     </>
+  );
 }
 
-export default App
+export default App;

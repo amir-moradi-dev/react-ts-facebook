@@ -34,9 +34,6 @@
   background-color: transparent;
   outline: none;
 }
-.nav__input:focus {
-  background-color: forestgreen;
-}
 .nav__center {
   display: flex;
   flex: 1;
@@ -59,7 +56,7 @@
 }
 
 .nav__option:hover {
-  background-color: white;
+  background-color: aliceblue;
   border-radius: 10px;
   align-items: center;
   padding: 0 30px;
