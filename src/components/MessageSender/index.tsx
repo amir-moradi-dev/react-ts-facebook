@@ -1,14 +1,23 @@
 import classes from "./index.module.css";
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import VideoCamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 
 function MessageSender() {
+  const [input, setInput] = useState<string>("");
+  const [image, setImage] = useState<string>("");
+
   function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
+
+    //some db actions
+
+    setInput("");
+    setImage("");
   }
+
   return (
     <>
       <div className={classes.messageSender}>
@@ -16,11 +25,17 @@ function MessageSender() {
           <Avatar />
           <form>
             <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
               className={classes.messageSender__input}
               type={"text"}
               placeholder={"Whats On Your Mind..."}
             />
-            <input placeholder={"Image URL (Optional)"} />
+            <input
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              placeholder={"Image URL (Optional)"}
+            />
             <button onClick={handleSubmit} type={"submit"}>
               Hidden Submit
             </button>
